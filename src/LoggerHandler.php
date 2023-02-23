@@ -37,7 +37,7 @@ class LoggerHandler extends AbstractProcessingHandler
      *
      * @return LoggerMessage
      */
-    protected function getMessage(array $record)
+    protected function getMessage(LogRecord $record)
     {
         if ($this->style == 'card') {
             // Include context as facts to send to microsoft teams
