@@ -4,6 +4,7 @@ namespace MargaTampu\LaravelTeamsLogging;
 
 use Monolog\Logger;
 use Monolog\Handler\AbstractProcessingHandler;
+use Monolog\LogRecord;
 
 class LoggerHandler extends AbstractProcessingHandler
 {
@@ -107,10 +108,7 @@ class LoggerHandler extends AbstractProcessingHandler
         ]);
     }
 
-    /**
-     * @param array $record
-     */
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         $json = json_encode($this->getMessage($record));
 
